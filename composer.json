@@ -1,0 +1,39 @@
+{
+    "name": "little-superman/laravel-database",
+    "description": "重写laravel部(database) 不部分代码",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jian Gao",
+            "email": "gaojianban@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/config": "5.8.*",
+        "illuminate/database": "5.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LittleSuperman\\Database\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LittleSuperman\\Database\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LittleSuperman\\Database\\Providers\\MacroableServiceProvider",
+                "LittleSuperman\\Database\\Providers\\ConsoleServiceProvider"
+            ],
+            "aliases": {
+                "SchemaExtends": "LittleSuperman\\Database\\Facades\\SchemaExtends"
+            }
+        }
+    }
+}

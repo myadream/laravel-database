@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use LittleSuperman\Database\Facades\SchemaExtends;
+
+class DummyClass extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        SchemaExtends::create('DummyTable', function (Blueprint $table) {
+            $table->bigIncrements('id');
+
+            $table->timestamps();
+            $table->tableComment('表注释');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        SchemaExtends::dropIfExists('DummyTable');
+    }
+}
